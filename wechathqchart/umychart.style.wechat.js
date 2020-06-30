@@ -1,5 +1,13 @@
 /*
-    不同风格行情配置文件
+    copyright (c) 2018 jones
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    开源项目 https://github.com/jones2000/HQChart
+
+    jones_2000@163.com
+
+    不同风格行情配置文件 (微信小程序版本)
 */
 
 var BLACK_STYLE =    //黑色风格
@@ -38,21 +46,60 @@ var BLACK_STYLE =    //黑色风格
     FrameSplitTextColor: "rgb(101,104,112)",     //刻度文字颜色
     FrameSplitTextFont: "12px 微软雅黑",        //坐标刻度文字字体
     FrameTitleBGColor: "rgb(246,251,253)",      //标题栏背景色
+    Frame: { XBottomOffset: 0 },   //X轴文字向下偏移
+
+    FrameLatestPrice: {
+        TextColor: 'rgb(255,255,255)',   //最新价格文字颜色
+        UpBarColor: "rgb(238,21,21)",    //上涨
+        DownBarColor: "rgb(25,158,0)",   //下跌
+        UnchagneBarColor: "rgb(190,190,190)",   //平盘
+        BGAlpha: 0.6
+    },
 
     CorssCursorBGColor: "rgb(43,54,69)",            //十字光标背景
     CorssCursorTextColor: "rgb(255,255,255)",
     CorssCursorTextFont: "12px 微软雅黑",
-    CorssCursorPenColor: "rgb(130,130,130)",           //十字光标线段颜色
+    CorssCursorHPenColor: "rgb(130,130,130)",           //十字光标线段颜色
+    CorssCursorVPenColor: "rgb(130,130,130)",           //十字光标线段颜色
+
     KLine:
-      {
+    {
         MaxMin: { Font: '12px 微软雅黑', Color: 'rgb(111,111,111)' },   //K线最大最小值显示
         Info:  //信息地雷
-          {
+        {
             Color: 'rgb(205,149,12)',
             TextColor: '#afc0da',
             TextBGColor: '#1a283e',
-          }
-      },
+            Investor:
+            {
+                ApiUrl: '/API/NewsInteract', //互动易
+            },
+            Announcement:                                           //公告
+            {
+                ApiUrl: '/API/ReportList',
+            },
+            Pforecast:  //业绩预告
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            },
+            Research:   //调研
+            {
+                ApiUrl: '/API/InvestorRelationsList',
+            },
+            BlockTrading:   //大宗交易
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            },
+            TradeDetail:    //龙虎榜
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            },
+            Policy: //策略
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            }
+        }
+    },
 
     Index: {      //指标线段颜色
       LineColor: [
@@ -89,6 +136,14 @@ var BLACK_STYLE =    //黑色风格
     {
       LineColor: "rgb(30,144,255)",
       PointColor: "rgb(105,105,105)",
+    },
+
+    TooltipPaint:   //Tooltip
+    {
+        BGColor: 'rgba(20,20,20,0.8)',          //背景色
+        BorderColor: 'rgb(210,210,210)',        //边框颜色
+        TitleColor: 'rgb(210,210,210)',         //标题颜色
+        TitleFont:'13px 微软雅黑'               //字体
     },
     
 };
@@ -137,15 +192,43 @@ var WHITE_STYLE=    //白色风格
     CorssCursorPenColor: "rgb(130,130,130)",           //十字光标线段颜色
 
     KLine:
-      {
+    {
         MaxMin: { Font: '12px 微软雅黑', Color: 'rgb(111,111,111)' },   //K线最大最小值显示
         Info:  //信息地雷
-          {
+        {
             Color: 'rgb(205,149,12)',
             TextColor: '#197de9',
             TextBGColor: '#e1e4ef',
-          }
-      },
+            Investor:
+            {
+                ApiUrl: '/API/NewsInteract', //互动易
+            },
+            Announcement:                                           //公告
+            {
+                ApiUrl: '/API/ReportList',
+            },
+            Pforecast:  //业绩预告
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            },
+            Research:   //调研
+            {
+                ApiUrl: '/API/InvestorRelationsList',
+            },
+            BlockTrading:   //大宗交易
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            },
+            TradeDetail:    //龙虎榜
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            },
+            Policy: //策略
+            {
+                ApiUrl: '/API/StockHistoryDay',
+            }
+        }
+    },
 
     Index: {      //指标线段颜色
       LineColor: [

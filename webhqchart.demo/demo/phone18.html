@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>页面行情筹码分布(K线图)</title>  
     <link rel="stylesheet" href="content/css/tools.css" />
-    <link rel="stylesheet" href="content/font/iconfont.css" />
+    <link rel="stylesheet" href="../jscommon/umychart.resource/font/iconfont.css" />
 </head>  
 <body>
 
     <div id="kline" style="width: 900px;height:400px;position: relative;"></div>
 
     <script src="content/js/jquery.min.js"></script>
+    <script src="../jscommon/umychart.network.js"></script>
     <script src="../jscommon/umychart.js"></script>
     <script src="../jscommon/umychart.complier.js"></script>
     <script src="../jscommon/umychart.index.data.js"></script>
@@ -123,7 +124,7 @@
                     Border: //边框
                     {
                         Left:100,    //左边间距
-                        Right:300,     //右边间距
+                        Right:80,     //右边间距
                         Bottom:25
                     },
                     
@@ -136,7 +137,7 @@
 
                     ExtendChart:    //扩展图形
                     [
-                        {Name:'筹码分布', ShowType:1 }
+                        { Name:'筹码分布', ShowType:1, IsShowX:true , ShowXCount:3, Width:250 }
                     ],
 
                     Overlay:
